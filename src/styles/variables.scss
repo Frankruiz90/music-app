@@ -1,0 +1,16 @@
+ /* Breakpoints */
+$small: 440px; /*-------- Mobile devices*/
+$s-medium: 570px; /*-------- Tablet devices*/
+$medium: 768px;
+$large: 960px; 
+$x-large: 1060px; /*-------- Desktop devices*/
+$xx-large: 1250px;
+$xxx-large: 1440px;
+$high-quality: 1700px;
+
+/* Función para media queries */
+@mixin from($size) {
+	@media (max-width: $size) {
+		@content;
+	}
+}
