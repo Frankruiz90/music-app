@@ -8,9 +8,13 @@ $xx-large: 1250px;
 $xxx-large: 1440px;
 $high-quality: 1700px;
 
-/* Función para media queries */
-@mixin from($size) {
-	@media (max-width: $size) {
-		@content;
-	}
-}
+/*COLORS*/
+/* Colors - Static*/
+$magenta: #FF277E;
+$white: #FFFFFF;
+$green: #1ed760;
+$coconut: #f9f9f9;
+$silver: #d5d5d5;
+$faded-gray: #A0A0A0;
+$dove-gray: #6C6F84;
+$dark-gray: #292929;
