@@ -4,10 +4,10 @@ import './index.css';
 import './styles/theme.scss'
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { AppRouter } from './routers/AppRouter';
+import { MusicApp } from './MusicApp';
 
 ReactDOM.render(
-  <AppRouter />,
+  <MusicApp />,
   document.getElementById('root'),
 );
 
