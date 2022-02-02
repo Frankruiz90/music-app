@@ -1,0 +1,19 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.navbar {
+  &-image {
+    height: auto;
+    margin-bottom: 0;
+    img {
+      // animation: animationimg 2s linear infinite;
+      width: 20px;
+      border-radius: 50%;
+
+      @include from($medium) {
+        width: 20px;
+      }
+    }
+
+  }
+}
