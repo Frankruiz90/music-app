@@ -13,9 +13,22 @@ export const getDataFavorites = async (token) => {
   } catch (error) {
     console.log(error);
   }
-
 }
-export const deleteTrackFavorites = async (id,token) => {
+
+export const addTrackFavorites = async (id, token) => {
+  try {
+    return await axios.put(`${BASEURL}/v1/me/tracks`, {
+      ids: [`${id}`]
+    }, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+export const deleteTrackFavorites = async (id, token) => {
   try {
     return await axios.delete(`${BASEURL}/v1/me/tracks?ids=${id}`, {
       headers: {
@@ -25,5 +38,4 @@ export const deleteTrackFavorites = async (id,token) => {
   } catch (error) {
     console.log(error);
   }
-
 }
