@@ -1,0 +1,17 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.m-card {
+  width: 100%;
+  box-shadow: 0px 0px 5px white;
+  &__image {
+    object-fit: contain;
+  }
+  @include from($s-medium) {
+    width: 200px;
+  }
+  &__button {
+    bottom: 10px;
+    right: 10px;
+  }
+}
