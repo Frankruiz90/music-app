@@ -10,25 +10,9 @@ import { Logo } from "../atoms/logo/Logo";
 const MyCard = lazy(() => import("../molecules/cards/MyCard"));
 
 export const Favorites = () => {
-  const [token, setToken] = useState("");
   const [searchKey, setSearchKey] = useState("");
   const [artists, setArtists] = useState([]);
   const [favorits, setFavorits] = useState([]);
-  useEffect(() => {
-    let token = localStorage.getItem("token");
-    const hash = window.location.hash;
-    if (!token && hash) {
-      token = hash
-        .substring(1)
-        .split("&")
-        .find((elem) => elem.startsWith("access_token"))
-        .split("=")[1];
-      window.location.hash = "";
-      window.localStorage.setItem("token", token);
-      setToken(token);
-      token = "";
-    }
-  }, []);
 
   useEffect(() => {
     let token = localStorage.getItem("token");
@@ -57,11 +41,10 @@ export const Favorites = () => {
   };
   const removeTrack = async (id) => {
     let token = localStorage.getItem("token");
-    
+
     const newFavorites = favorits.filter((item) => item.track.id !== id);
     setFavorits(newFavorites);
     const response = await deleteTrackFavorites(id, token);
-    console.log("response", response);
   };
   return (
     <div className="">
@@ -70,6 +53,7 @@ export const Favorites = () => {
         <button type={"submit"}>Search</button>
       </form> */}
       <Suspense fallback={<Logo />}>
+        <h1 className="text-white">Favoritos</h1>
         <section className="row ">
           <article className="d-flex flex-wrap justify-content-center">
             {favorits.map((item) => (
